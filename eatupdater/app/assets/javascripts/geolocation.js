@@ -11,14 +11,7 @@
             alert('Geolocation is not supported in your browser');
     }
 
-    $.ajax({
-        type: "POST",
-        url: "/locations",
-        data: {location: { lat: 'position.coords.latitude', long: 'position.coords.longitude'}},
-        
-
  
-});
     }
  
 function showPosition(position) {
@@ -66,6 +59,14 @@ function showPosition(position) {
                     watchId = null;
  
                 }
+                   $.ajax({
+        type: "POST",
+        url: "/locations",
+        data: {location: { lat: position.coords.latitude, long: position.coords.longitude}},
+        
+
+ 
+});
             }
  
         function showError(error) {
