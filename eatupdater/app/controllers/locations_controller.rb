@@ -2,12 +2,9 @@ class LocationsController < ApplicationController
    respond_to :js, :json, :html
    def create
    	    @location = Location.new(location_params)
-
-        @location = Location.new(location_params)
-
         respond_to do |format|
             if @location.save
-                format.html { redirect_to @location, notice: 'User was successfully created.' }
+                format.html { redirect_to @location, notice: 'location was successfully saved.' }
                 format.json { render json: @location, status: :created, location: @product }
             else
                 format.html { render action: "new" }
@@ -20,10 +17,15 @@ class LocationsController < ApplicationController
   	respond_with @location
    end
 
+   def index
+    @locations = @location.all
 
-    private
-  def location_params
-    params.require(:location).permit(:lat, :long)
+   end
+
+
+  private
+      def location_params
+      params.require(:location).permit(:lat, :long)
   end
 
 
