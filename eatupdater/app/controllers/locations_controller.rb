@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+   respond_to :js, :json, :html
    def create
    	    @location = Location.new(location_params)
 
@@ -16,12 +17,13 @@ class LocationsController < ApplicationController
 
    def show
   	@location = Location.find(params[:id])
+  	respond_with @location
    end
 
 
     private
   def location_params
-    params.require(:location).permit(:long, :lat)
+    params.require(:location).permit(:lat, :long)
   end
 
 

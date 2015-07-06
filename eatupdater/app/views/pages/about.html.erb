@@ -6,7 +6,7 @@
 <head>
 <title>Sample Map</title>
 <style>
-#mapdiv {
+#map{
     margin: 0;
     padding: 0;
     width: 100%;
@@ -14,16 +14,13 @@
 }
 </style>
 
-<%= javascript_include_tag 'application' %>
- 
-<%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"' %>
+
+
 
  
     </head>
-    <body onload="geoloc()">
-        <p id = 'mapdiv'></p>
-        <button onclick="stopWatch()">
-            Stop
-        </button>
+    <body >
+        <p id = 'map'></p>
+        
     </body>
 </html>
