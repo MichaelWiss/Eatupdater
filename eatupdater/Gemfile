@@ -30,6 +30,8 @@ gem 'spring',        group: :development
 gem 'foundation-rails'
 
 gem 'yelp', require: 'yelp'
+
+gem 'yelpster'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
