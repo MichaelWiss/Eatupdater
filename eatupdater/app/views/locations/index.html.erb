@@ -1,5 +1,14 @@
-<%= @locations.each do |location| %>
+
      <li>
-      <%= location.all  %>
-    </li>
-<% end %>
+      
+      
+
+    <li>
+       <%= @locations.each do |location| %>
+       	     <%= location.lat.to_s %>
+       	     <%= location.long.to_s %>
+       	    
+      <% end %>
+
+
+
