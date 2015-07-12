@@ -1,31 +1,35 @@
 class LocationsController < ApplicationController
  respond_to :js, :json, :html
- require 'yelp'
+
+  def new
+    @location = Location.new
+  end
 
   def index
       @locations = Location.all
   end 
 
   def show
-      @location = Location.find(params[:id])
+      @location = Location.find(location_params[:id])
       respond_with @location
   end
 
-  
   def create
-
-   	    @location = Location.new(location_params)
-        respond_to do |format|
+            @location = Location.new(location_params)
+            respond_to do |format|
             if @location.save
-                redirect_to @user, notice: "Thanks for signing up!"
+                format.html {redirect_to root_url, :notice => "Signed up!"}
             else
-                render :new
+                format.html {render :new}
+            end
   end
 
-  private
+private
 
   def location_params
-      location_params.require(:location).permit(:lat, :long)
+      params.require(:location).permit(:lat, :long, :id)
   end
 end
+end
+
 
