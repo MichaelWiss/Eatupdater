@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+ respond_to :js, :json, :html
  require 'yelp'
 
   def index
@@ -12,7 +13,7 @@ class LocationsController < ApplicationController
 
   
   def create
-        respond_to :js, :json, :html
+
    	    @location = Location.new(location_params)
         respond_to do |format|
             if @location.save
@@ -27,3 +28,4 @@ class LocationsController < ApplicationController
       location_params.require(:location).permit(:lat, :long)
   end
 end
+
