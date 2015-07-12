@@ -31,7 +31,7 @@ gem 'foundation-rails'
 
 gem 'yelp', require: 'yelp'
 
-gem 'yelpster'
+#gem 'yelpster'
 
 
 group :test, :development do
