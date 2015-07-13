@@ -10,16 +10,23 @@ class LocationsController < ApplicationController
       respond_with @location
   end
 
+  def new
+      @location = Location.new
+  end
+
   def create
-       @location = Location.new(location_params[:location])
+       @location = Location.new(location_params)
         respond_to do |format|
             if @location.save
-              puts "We’re in the IF statement"
-                format.html {redirect_to @user, notice: "Thanks for signing up!"}
+                format.html {redirect_to @location, notice: 'location was saved'}
+                format.json { render json: @location, status: :created, location: @location }
+                format.js
             else
-             format.html {render :new}
+                format.html {render action: "new" }
+                format.json {render json: @location.errors, status: :unprocessable_entity }
+                format.js
             end
-  end
+         end
 
 private
 
@@ -28,5 +35,3 @@ private
   end
 end
 end
-
-
