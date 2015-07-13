@@ -1,7 +1,10 @@
 class LocationsController < ApplicationController
+ include Yelp::V2::Search::Request
  respond_to :js, :json, :html
+  
 
   def index
+       serialized_results = []
       @locations = Location.all
   end 
 
@@ -13,6 +16,8 @@ class LocationsController < ApplicationController
   def new
       @location = Location.new
   end
+
+
 
   def create
        @location = Location.new(location_params)
@@ -26,7 +31,26 @@ class LocationsController < ApplicationController
                 format.json {render json: @location.errors, status: :unprocessable_entity }
                 format.js
             end
-         end
+        end
+  end
+
+    def search
+
+     client = Yelp::Client.new
+      request = Location.new(
+                 :term => 'thai',
+                 :category_filter => 'food,restaurants',
+                 :limit => 20,
+                 :latitude => location_params[:lat],
+                 :longitude => location_params[:long]
+                 )
+     response = client.search(request)
+     render json: response
+    
+  end
+
+
+
 
 private
 
@@ -34,4 +58,5 @@ private
       params.require(:location).permit(:lat, :long)
   end
 end
-end
+
+
