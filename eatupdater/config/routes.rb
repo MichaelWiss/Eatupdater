@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :locations
 
+  
+
   get 'pages/about'
 
   get 'pages/contact'

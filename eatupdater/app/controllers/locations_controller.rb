@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
- include Yelp::V2::Search::Request
+ 
  respond_to :js, :json, :html
   
 
@@ -19,6 +19,10 @@ class LocationsController < ApplicationController
 
 
 
+
+
+
+
   def create
        @location = Location.new(location_params)
         respond_to do |format|
@@ -34,20 +38,11 @@ class LocationsController < ApplicationController
         end
   end
 
-    def search
-
-     client = Yelp::Client.new
-      request = Location.new(
-                 :term => 'thai',
-                 :category_filter => 'food,restaurants',
-                 :limit => 20,
-                 :latitude => location_params[:lat],
-                 :longitude => location_params[:long]
-                 )
-     response = client.search(request)
-     render json: response
-    
-  end
+ def search
+    parameters = { term: params[:term], limit: 16 }
+    @response = Yelp.client.search(location_params, parameters)
+    render 'locations/index'  
+end 
 
 
 
