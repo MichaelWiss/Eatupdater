@@ -4,10 +4,11 @@ class LocationsController < ApplicationController
   
 
   def index
+      
       @location = Location.all
-      @location.lat = Location.find(params[:lat])
-      @location.long = Location.find(params[:long])
   end 
+
+  
 
   def show
       @location = Location.find(params[:id])
