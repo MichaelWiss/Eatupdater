@@ -4,13 +4,15 @@ class LocationsController < ApplicationController
   
 
   def index
-       serialized_results = []
-      @locations = Location.all
+      @location = Location.all
+      @location.lat = Location.find(params[:lat])
+      @location.long = Location.find(params[:long])
   end 
 
   def show
       @location = Location.find(params[:id])
       respond_with @location
+
   end
 
   def new
@@ -38,11 +40,10 @@ class LocationsController < ApplicationController
         end
   end
 
- def search
-    parameters = { term: params[:term], limit: 16 }
-    @response = Yelp.client.search(location_params, parameters)
-    render 'locations/index'  
-end 
+
+
+ 
+
 
 
 
@@ -53,5 +54,3 @@ private
       params.require(:location).permit(:lat, :long)
   end
 end
-
-
