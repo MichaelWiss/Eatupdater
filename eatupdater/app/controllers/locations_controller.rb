@@ -1,30 +1,21 @@
 class LocationsController < ApplicationController
  
- respond_to :js, :json, :html
+   respond_to :js, :json, :html
   
 
   def index
-      
       @location = Location.all
+      @location = location.find(params[:id])
   end 
-
-  
 
   def show
       @location = Location.find(params[:id])
       respond_with @location
-
   end
 
   def new
       @location = Location.new
   end
-
-
-
-
-
-
 
   def create
        @location = Location.new(location_params)
