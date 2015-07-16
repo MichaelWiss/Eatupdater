@@ -35,9 +35,10 @@ class LocationsController < ApplicationController
   end
 
 def index
-      @location = Location.all
-      @lattitude = @location.last(params[:lat])
-      @longitude = @location.last(params[:long])
+
+      respond_with @location
+      @latitude = Location.lat
+      @longitude = Location.long
   end
 
  

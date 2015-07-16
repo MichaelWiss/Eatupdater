@@ -9,9 +9,9 @@ params = { term: 'Vietnamese',
 
 locale = { cc: "US", lang: 'en' }
 
-coordinates = { latitude: @lattitude, longitude: @longitude}
+coordinates = { latitude: @latitude, longitude: @longitude}
  
-Yelp.client.search_by_coordinates(coordinates, params, locale).businesses.each do |place|
+Yelp.client.search_by_coordinates( coordinates, params, locale).businesses.each do |place|
   eating_places[place.name] = {
     :review_count => place.review_count,
     :rating => place.rating,
