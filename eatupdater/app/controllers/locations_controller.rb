@@ -1,12 +1,12 @@
 class LocationsController < ApplicationController
+  attr_reader :location
  
    respond_to :js, :json, :html
   
 
-  def index
-      @location = Location.all
-      @location = location.find(params[:id])
-  end 
+
+
+ 
 
   def show
       @location = Location.find(params[:id])
@@ -16,6 +16,8 @@ class LocationsController < ApplicationController
   def new
       @location = Location.new
   end
+
+  
 
   def create
        @location = Location.new(location_params)
@@ -32,7 +34,11 @@ class LocationsController < ApplicationController
         end
   end
 
-
+def index
+      @location = Location.all
+      @lattitude = @location.last(params[:lat])
+      @longitude = @location.last(params[:long])
+  end
 
  
 

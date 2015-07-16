@@ -9,7 +9,7 @@ params = { term: 'Vietnamese',
 
 locale = { cc: "US", lang: 'en' }
 
-coordinates = {lattitude: @location.lat, longitude: @location.long}
+coordinates = { latitude: @lattitude, longitude: @longitude}
  
 Yelp.client.search_by_coordinates(coordinates, params, locale).businesses.each do |place|
   eating_places[place.name] = {
