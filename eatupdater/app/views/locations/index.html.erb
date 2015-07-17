@@ -1,6 +1,5 @@
 
-
-<%= 
+<%=
 eating_places = Hash.new{|k, v| k[v] = {}}
 
 params = { term: 'Vietnamese',
@@ -9,17 +8,17 @@ params = { term: 'Vietnamese',
 
 locale = { cc: "US", lang: 'en' }
 
-coordinates = { latitude: @latitude, longitude: @longitude}
+coordinates = { latitude: 45.1023829, longitude: -93.0289364}
  
 Yelp.client.search_by_coordinates( coordinates, params, locale).businesses.each do |place|
   eating_places[place.name] = {
     :review_count => place.review_count,
     :rating => place.rating,
     :phone => place.phone}
-end
+ end
+%> 
 
 
- %>
 
 
                                 
