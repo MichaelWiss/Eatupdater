@@ -33,6 +33,8 @@ gem 'yelp', require: 'yelp'
 
 #gem 'yelpster'
 
+gem 'instagram'
+
 
 group :test, :development do
   gem "minitest"

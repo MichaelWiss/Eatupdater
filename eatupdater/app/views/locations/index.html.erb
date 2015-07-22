@@ -13,11 +13,27 @@ coordinates = { latitude: @latitude.to_s , longitude: @longitude.to_s }
 Yelp.client.search_by_coordinates( coordinates, params, locale).businesses.each do |place|
   eating_places[place.name] = {
     :review_count => place.review_count,
-    :rating => place.rating}
- end
-%> 
+    :rating => place.rating,
+    :name => place.name}
+
+end %> 
 
 
+<%= eating_places.each do |business| %>
+<div class="large-6 columns">
+    <% if business.respond_to?(:image_url) %>
+    <p><%= image_tag business.image_url %></p>
+    <p style='color: blue'><%= business.name %></p>
+    <p style='color: blue'><%= business.categories.each do |category, name| %>
+                                <%= name %> , 
+                                <% end %></p>
+    <p style='color: blue'><%= business.rating %></p>
+    <% if business.respond_to?(:image_url) %>
+  <p><%= image_tag business.image_url %></p>
+
+<% end %>  
+<% end %> 
+<% end %>  
 
 
-                                
+                       
