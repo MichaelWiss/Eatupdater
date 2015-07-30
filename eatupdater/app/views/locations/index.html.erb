@@ -18,6 +18,7 @@ Yelp.client.search_by_coordinates( coordinates, params, locale).businesses.each 
         image_tag business.image_url %></p> 
        <p><%= business.location.display_address %></p>
        <p><%= image_tag( business.rating_img_url_small) %></p>
+       <p><%= business.snippet_text %>
 
       
       
