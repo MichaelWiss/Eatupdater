@@ -1,5 +1,5 @@
 <div class="large-6 columns">
-<%=
+<%
 eating_places = Hash.new{|k, v| k[v] = {}}
 
 params = { term: 'Vietnamese',
@@ -16,6 +16,9 @@ Yelp.client.search_by_coordinates( coordinates, params, locale).businesses.each 
        <p><%= business.phone if business.respond_to?(:display_phone)%></p>
        <p><%= business.image_url if business.respond_to?(:image_url)
         image_tag business.image_url %></p> 
+       <p><%= business.location.display_address %></p>
+       <p><%= image_tag( business.rating_img_url_small) %></p>
+
       
       
 
