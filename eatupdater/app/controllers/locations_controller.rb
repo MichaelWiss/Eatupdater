@@ -45,6 +45,8 @@ class LocationsController < ApplicationController
       @longitude = Location.last.long
   end
 
+  
+
 
 
 
