@@ -1,6 +1,6 @@
    
 
-   if (navigator.geolocation) {
+   if (Modernizr.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;

@@ -19,25 +19,12 @@ Yelp.client.search_by_coordinates( coordinates, params, locale).businesses.each 
        <p><%= business.location.display_address %></p>
        <p><%= image_tag( business.rating_img_url_small) %></p>
        <p><%= business.snippet_text %>
+       <p><%= link_to "More Info", business.url %></p>
+       <p><%= business.location.address %></p>
+
 
       
       
 
 
-<% end %>
-<%= eating_places.each do |business| %>
-<div class="large-6 columns">
-    <% if business.respond_to?(:image_url) %>
-    <p><%= image_tag place.image_url %></p>
-    <p style='color: blue'><%= puts business.name  %></p>
-    <p style='color: blue'><%= business.categories.each do |category, name| %>
-                                <%= name %> , 
-                              </p>
-    <p style='color: blue'><%= business.rating %></p>
-    <% if business.respond_to?(:image_url) %>
-  <p><%= image_tag business.image_url %></p>
-
-  <% end %>
-<% end %>  
-<% end %> 
 <% end %>
