@@ -3,13 +3,13 @@ Rails.application.routes.draw do
 
   resources :locations
 
-  
+  root 'pages#about'
 
   get 'pages/about'
 
   get 'pages/contact'
 
-  root 'pages#about'
+  
 
   get 'signup' => 'users#new'
 

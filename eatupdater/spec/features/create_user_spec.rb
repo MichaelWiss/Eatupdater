@@ -8,16 +8,16 @@ describe "Creating a new user" do
 
     expect(current_path).to eq(signup_path)
 
-    fill_in "Name",  with: "Example User"
-    fill_in "Email", with: "user@example.com"
-    fill_in "Password", with: "secret"
-    fill_in "Confirm Password", with: "secret"
+    fill_in "Name",  with: "Larry"
+    fill_in "Email", with: "larry@example.com"
+    fill_in "Password", with: "abracadabra"
+    fill_in "Confirm Password", with: "abracadabra"
 
     click_button 'Create User'
 
     expect(current_path).to eq(user_path(User.last))
 
-    expect(page).to have_text('Example User')
+   
     expect(page).to have_text('Thanks for signing up!')
   end
 
