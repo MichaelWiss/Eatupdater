@@ -37,6 +37,8 @@ gem 'instagram'
 
 gem 'test-unit'
 
+gem 'sweetalert-rails'
+
 group :test, :development do
   gem "minitest"
   gem "rspec-rails", "2.13.1"

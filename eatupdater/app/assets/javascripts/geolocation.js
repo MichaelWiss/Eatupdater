@@ -11,7 +11,7 @@
                             contentType: 'application/json; charset=utf-8',
                             data: JSON.stringify({lat: lat, long: lon}),
                             dataType: "json",
-            success: function(response) { alert("we have your location"); },  
+            success: function(response) { sweetAlert("we have your location"); },  
             error: function(xhr, ajaxOptions, thrownError) { alert(xhr.responseText); }
           });
         });
