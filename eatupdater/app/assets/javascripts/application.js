@@ -15,6 +15,6 @@
 //= require foundation
 //= require sweet-alert
 //= require turbolinks
+//= require foundation/rails/confirm
 //= require_tree .
 
-$(function(){ $(document).foundation(); });

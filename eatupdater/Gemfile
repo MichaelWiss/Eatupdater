@@ -38,6 +38,7 @@ gem 'instagram'
 gem 'test-unit'
 
 gem 'sweetalert-rails'
+gem 'foundation-rails-confirm'
 
 group :test, :development do
   gem "minitest"

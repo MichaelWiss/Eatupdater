@@ -53,6 +53,7 @@ GEM
     foundation-rails (5.5.0.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0, < 3.4)
+    foundation-rails-confirm (0.0.1)
     hashie (3.4.2)
     i18n (0.7.0)
     instagram (1.1.5)
@@ -161,6 +162,7 @@ DEPENDENCIES
   capybara (= 2.1.0)
   coffee-rails (~> 4.0.0)
   foundation-rails (~> 5.5.0.0)
+  foundation-rails-confirm
   instagram
   jbuilder (~> 2.0)
   jquery-rails
