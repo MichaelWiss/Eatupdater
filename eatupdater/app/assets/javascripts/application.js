@@ -11,10 +11,18 @@
 // about supported directives.
 //
 //= require jquery
+
 //= require jquery_ujs
 //= require foundation
 //= require sweet-alert
 //= require turbolinks
 //= require foundation/rails/confirm
 //= require_tree .
+
+$(function(){
+  $(window).load(function() {
+    $(document).foundation();
+  });
+});
+
 
