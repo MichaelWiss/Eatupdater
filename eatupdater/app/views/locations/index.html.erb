@@ -1,4 +1,23 @@
-<div class="large-6 columns">
+<div class="large-12 columns">
+
+
+ <p id = 'map'></p>
+
+
+
+<style>
+#map {
+position: absolute;
+left: 0;
+    width: 100%;
+    height: 500px;
+}
+.response {top:600px;}
+</style>
+
+</div>
+
+<div class="large-12 columns response">
 <%
 eating_places = Hash.new{|k, v| k[v] = {}}
 
