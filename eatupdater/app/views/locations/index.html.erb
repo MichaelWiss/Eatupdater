@@ -30,7 +30,7 @@ locale = { cc: "US", lang: 'en' }
 coordinates = { latitude: @latitude.to_s , longitude: @longitude.to_s }
  
 Yelp.client.search_by_coordinates( coordinates, params, locale).businesses.each do |business| %>
-       <p><%= business.name %></p>
+     <!--   <p><%= business.name %></p>
        <p><%= business.rating %></p>
        <p><%= business.phone if business.respond_to?(:display_phone)%></p>
        <p><%= business.image_url if business.respond_to?(:image_url)
@@ -39,7 +39,7 @@ Yelp.client.search_by_coordinates( coordinates, params, locale).businesses.each 
        <p><%= image_tag( business.rating_img_url_small) %></p>
        <p><%= business.snippet_text %>
        <p><%= link_to "More Info", business.url %></p>
-       <p><%= business.location.address %></p>
+       <p><%= business.location.address %></p> -->
 
 
       
@@ -57,7 +57,8 @@ Yelp.client.search_by_coordinates( coordinates, params, locale).businesses.each 
             <div class="large-2 columns small-3"><%= business.image_url if business.respond_to?(:image_url)
         image_tag business.image_url %></div>
             <div class="large-10 columns">
-              <p><strong><%= business.name %></strong> <p><%= business.rating %></p><p><%= business.snippet_text %></p>
+              <p><strong><%= business.name %></strong></p><p><%= business.location.display_address %></p> <p><%= business.rating %></p><p><%= business.snippet_text %></p> <p><%= link_to "More Info", business.url %></p>
+       <p><%= business.location.address %></p>
               <ul class="inline-list">
                 <li><a href="">Reply</a></li>
                 <li><a href="">Share</a></li>
