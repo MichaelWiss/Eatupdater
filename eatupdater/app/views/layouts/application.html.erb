@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+  
+  <%= render "layouts/header" %>
+  <%= render 'layouts/messages' %>
+
+ 
+  <script>
+    $(document).ready(function () {
+            $("div[id^='flash_']").fadeOut(3000);
+    });
+  </script>
+
+
+
+
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"' %>
+
+    <%= render "layouts/footer" %>
+    
+  </body>
+</html>
