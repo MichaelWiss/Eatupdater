@@ -1,0 +1,17 @@
+<%# Rails flash messages styled for Zurb Foundation %>
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div data-alert class="alert-box <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+      <%= content_tag :div, msg %>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% end %>
+<% end %>
+
+<script type="text/javascript">
+     window.setTimeout(function() {
+          $(".alert-box").fadeTo(500, 0).slideUp(500, function(){
+          $(this).remove();
+           });
+        }, 2500);
+</script>

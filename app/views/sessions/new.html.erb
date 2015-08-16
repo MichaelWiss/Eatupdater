@@ -1,0 +1,31 @@
+<header>
+  <h1>Sign In</h1>
+</header>
+
+<%= form_tag(session_path) do %>
+<form>
+  <div class="row collapse">
+  <div class="small-3 large-6 columns">
+  <fieldset>
+     <legend>Sign In</legend>
+   
+      <li>
+        <%= label_tag :email %>
+        <%= email_field_tag :email, nil, required: true  %>
+      </li>
+       <li>
+        <%= label_tag :password %>
+        <%= password_field_tag :password, nil, required: true  %>
+      </li>
+      <p>
+        <%= submit_tag 'Sign In' %>
+      </p>
+   
+  </fieldset>
+  </div>
+  </div>
+ </form>
+ <p>
+  No account yet? <%= link_to 'Sign up!', signup_path %>
+</p>
+<% end %>
