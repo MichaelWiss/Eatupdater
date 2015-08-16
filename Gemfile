@@ -59,6 +59,9 @@ end
 group :development, :test do
   gem 'sqlite3'
 end
+
+gem 'rails_12factor'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
