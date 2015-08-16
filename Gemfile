@@ -60,8 +60,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'rails_12factor'
-
+gem 'rails_12factor', group: :production
+ruby "2.2.1"
 # Use unicorn as the app server
 # gem 'unicorn'
 
