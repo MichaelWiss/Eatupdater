@@ -37,9 +37,7 @@ class LocationsController < ApplicationController
 
   
 
-  # def to_s
-  #   @location.latitude.to_s << ', ' << @location.longitude.to_s
-  # end
+  
 
   def index
       @latitude = Location.last.lat
