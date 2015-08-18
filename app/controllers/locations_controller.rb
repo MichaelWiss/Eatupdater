@@ -1,6 +1,8 @@
 class LocationsController < ApplicationController
   before_action :require_signin, except: [:new, :create]
   attr_reader :location
+  attr_reader :lat
+  attr_reader :long
  
    respond_to :js, :json, :html
   
@@ -35,15 +37,15 @@ class LocationsController < ApplicationController
         end
   end
 
-  
-
   def lat
-    lat = @location.last(location_params[:lat])
+    lat = location_params([:lat])
   end
 
   def long
-    long = @location.last(location_params[:long])
+    long = location_params([:long])
   end
+
+
 
   def index
       @latitude = Location.last.lat
