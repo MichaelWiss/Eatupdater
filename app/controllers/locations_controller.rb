@@ -37,11 +37,11 @@ class LocationsController < ApplicationController
   end
 
   def lat
-    lat = Location.lat
+    
   end
 
   def long
-    long = Location.long
+    
   end
 
 
