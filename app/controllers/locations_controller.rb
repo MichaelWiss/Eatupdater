@@ -37,11 +37,11 @@ class LocationsController < ApplicationController
   end
 
   def lat
-    lat = Location(location_params[:lat])
+    lat = Location.lat
   end
 
   def long
-    long = Location(location_params[:long])
+    long = Location.long
   end
 
 
