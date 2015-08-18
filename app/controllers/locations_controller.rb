@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   before_action :require_signin, except: [:new, :create]
-  attr_reader :location
+  attr_reader :location, :lat, :long
 
  
    respond_to :js, :json, :html
