@@ -1442,3 +1442,9 @@ $include-html-global-classes: $include-html-classes;
 // $include-accessibility-classes: true;
 
 @import 'foundation';
+
+.alert-box.radius{width:100%;}
+.top-bar {background-color:#F2EFED};
+.top-bar-section li:not(.has-form) a:not(.button) {background-color:#F2EFED};
+.top-bar-section ul li {background-color:#F2EFED};
+.top-bar-section li a:hover{background:BCC0C2};

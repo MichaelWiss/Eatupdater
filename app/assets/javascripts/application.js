@@ -25,4 +25,4 @@ $(function(){
   });
 });
 
-
+$alert-transition-speed: 300ms;
