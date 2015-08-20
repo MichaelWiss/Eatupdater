@@ -10,14 +10,8 @@ class LocationsController < ApplicationController
 
  
 
-  def show
-      @location = Location.find(params[:id])
-      respond_with @location
-  end
 
-  def new
-      @location = Location.new
-  end
+
 
   
 
@@ -44,12 +38,22 @@ class LocationsController < ApplicationController
     
   end
 
+   def show
+      @location = Location.find(params[:id])
+      respond_with @location
+  end
 
+  def new
+      @location = Location.new
+  end
 
+  
   def index
       @latitude = Location.last.lat
       @longitude = Location.last.long
   end
+
+
 
   
 
