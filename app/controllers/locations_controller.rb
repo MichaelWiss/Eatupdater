@@ -5,17 +5,15 @@ class LocationsController < ApplicationController
  
    respond_to :js, :json, :html
   
+  def lat
+    
+  end
 
+  def long
+    
+  end
 
-
- 
-
-
-
-
-  
-
-  def create
+   def create
        @location = Location.new(location_params)
         respond_to do |format|
             if @location.save
@@ -30,15 +28,10 @@ class LocationsController < ApplicationController
         end
   end
 
-  def lat
-    
-  end
 
-  def long
-    
-  end
+ 
 
-   def show
+  def show
       @location = Location.find(params[:id])
       respond_with @location
   end
@@ -47,11 +40,18 @@ class LocationsController < ApplicationController
       @location = Location.new
   end
 
-  
+
   def index
       @latitude = Location.last.lat
       @longitude = Location.last.long
   end
+
+
+  
+
+ 
+
+  
 
 
 
