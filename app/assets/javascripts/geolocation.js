@@ -1,5 +1,5 @@
    
-
+   var map = document.getElementById('map');
    if (Modernizr.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
             var lat = position.coords.latitude;
