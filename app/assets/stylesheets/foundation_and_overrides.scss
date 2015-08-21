@@ -1468,7 +1468,7 @@ $include-html-global-classes: $include-html-classes;
 }
 
 .right-off-canvas-menu {
-  width: 35%;
+  width: 60%;
 }
 
 .move-left > .inner-wrap {
@@ -1476,7 +1476,7 @@ $include-html-global-classes: $include-html-classes;
 }
 
 .right-off-canvas-menu {
-  background: #00d7ff;
+  background-image: url('restaurant_icons.png');
   padding: 3rem 3rem;
   .side-nav.main li a:not(.button) {
     font-weight: 100;
