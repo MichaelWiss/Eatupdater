@@ -40,6 +40,18 @@ class LocationsController < ApplicationController
       @location = Location.new
   end
 
+  def search
+    params = { term: 'Vietnamese',
+           category_filter: 'restaurants'
+         }
+
+   locale = { cc: "US", lang: 'en' }
+
+   coordinates = { latitude: @latitude.to_s , longitude: @longitude.to_s }
+ 
+   response = Yelp.client.search_by_coordinates( coordinates, params, locale)
+  end
+
 
   def index
       @latitude = Location.last.lat
