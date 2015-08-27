@@ -15,10 +15,15 @@
     <aside class="right-off-canvas-menu">
         <!-- whatever you want goes here -->
         <ul class="side-nav main">
-          <li><a class="is-active" href="#">faster</a></li>
-          <li><a href="#">smarter</a></li>
-          <li><a href="#">easier</a></li>
-          <li><a href="#">all you</a></li>
+         <% if current_user %>
+      <li><%= link_to current_user.name, current_user %></li>
+      <li><%= link_to 'Sign Out', session_path, method: :delete, class: 'button' %>
+      <% else %>
+    
+      <li ><%= link_to 'Sign Up', signup_path %></li>
+      
+      <li class="active"><%= link_to 'Sign In', signin_path %></li>
+       <% end %>
         </ul>
         <ul class="side-nav secondary">
           <li><a href="#">about us</a></li>
