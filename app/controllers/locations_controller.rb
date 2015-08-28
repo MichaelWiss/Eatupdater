@@ -58,6 +58,10 @@ class LocationsController < ApplicationController
       @longitude = Location.last.long
   end
 
+  def image_url
+  end
+
+
 
   
 
