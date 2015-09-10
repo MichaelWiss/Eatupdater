@@ -44,8 +44,8 @@ Yelp.client.search_by_coordinates( coordinates, params, locale).businesses.each 
      
            
           <div class="row">
-            <div class="large-12 columns small-6"><%= business.image_url if business.respond_to?(:image_url)
-image_tag business.image_url %></div>
+            <div class="large-12 columns small-6"><% if business.respond_to?(:image_url) %>
+<%= image_tag business.image_url %> <% end %></div>
             <div class="large-10 columns">
               <p><strong><%= business.name %></strong></p><p><%=  business.location.display_address.join(' ') %></p> <p><%= business.rating %></p><p><%= business.snippet_text %></p> <p><%= link_to "More Info", business.url %></p>
        <p><%= business.location.address.join(' ') %></p>
