@@ -32,15 +32,18 @@ coordinates = { latitude: @latitude.to_s , longitude: @longitude.to_s }
 Yelp.client.search_by_coordinates( coordinates, params, locale).businesses.each do |business| %>
     
 
+
+ 
       
       
 
 
 
 
-    <div class="row">
+    <div class="row" >
+   
 
-     <div class="large-12 columns">
+     <div class="large-12 columns" id = "rest">
      
            
           <div class="row">
@@ -56,12 +59,15 @@ Yelp.client.search_by_coordinates( coordinates, params, locale).businesses.each 
      
      
             
-          </div>
+ 
            
      
           <hr/>
      
            
           
+   
+
+    </div>
     </div>
   <% end %>
