@@ -1487,6 +1487,9 @@ $include-html-global-classes: $include-html-classes;
 .right-off-canvas-menu {
   width: 150%;
 }
+aside.right-off-canvas-menu {
+     width: 150%;
+}
 
 .move-left > .inner-wrap {
   transform: translate3d(-35%, 0, 0); 
