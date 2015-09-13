@@ -39,6 +39,7 @@ gem 'test-unit'
 
 gem 'sweetalert-rails'
 gem 'foundation-rails-confirm'
+gem 'gon'
 
 
 group :test, :development do
@@ -52,15 +53,14 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-
-group :production do
-  gem 'pg'
-end
 group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'rails_12factor', group: :production
+group :production do
+    gem 'rails_12factor'
+        gem 'pg'
+end
 ruby "2.2.1"
 # Use unicorn as the app server
 # gem 'unicorn'
