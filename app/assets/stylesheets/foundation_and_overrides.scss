@@ -1495,6 +1495,7 @@ $include-html-global-classes: $include-html-classes;
 .right-off-canvas-menu {
   background-image: url('restaurant_icons.png');
   padding: 3rem 3rem;
+  width: 60%;
   .side-nav.main li a:not(.button) {
     font-weight: 100;
     font-style: normal;
