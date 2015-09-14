@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
-  get 'static_pages/about', :as => 'about'
+  get 'pages/about', :as => 'about'
 
-  get 'static_pages/contact', :as => 'contact'
+  get 'pages/contact', :as => 'contact'
 
   resources :users
 
   resources :locations
 
 
-  get 'pages/about'
 
-  get 'pages/contact'
 
   
 
